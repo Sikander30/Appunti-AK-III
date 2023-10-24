@@ -17,5 +17,5 @@ file_list = [('./html/Fisiologia Umana II/MCM.html', 'Fisio2'),
 for file, subject in file_list:
     path = path = os.path.abspath(file)
     # print(f'File to convert: {path}')
-    converter.convert(f'file:///{path}', f'pdf/{subject}-{file.split('/')[-1].split('.')[0]}.pdf')
+    converter.convert(f'file:///{path}', f'pdf/{subject}-{file.split("/")[-1].split(".")[0]}.pdf')
 
