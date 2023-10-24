@@ -1,2 +1,3 @@
 defusedxml==0.7.1
 odfpy==1.4.1
+pyhtml2pdf==0.0.7
