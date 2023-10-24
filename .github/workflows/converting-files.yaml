@@ -1,0 +1,28 @@
+name: converting-files
+run-name: ${{ github.actor }} is converting files.
+on: [push]
+jobs:
+    convert-files:
+        runs-on: alpine-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-python@v4
+              with:
+                python-version: '3.9'
+                cache: 'pip'
+            - run: mkdir -p html
+            - run: mkdir -p pdf
+            - run: odf2xhtml "./odt/Fisiologia Umana II/MCM.odt" > html/Fisio2-MCM.html
+            - run: odf2xhtml "./odt/Fisiologia Umana II/UF.odt" > html/Fisio2-UF.html
+            - run: odf2xhtml "./odt/Fisiologia Umana II/LC.odt" > html/Fisio2-LC.html
+            - run: odf2xhtml "./odt/Fisiopatologia Generale e Patologia Clinica/AC.odt" > html/Fisiopato-AC.html
+            - run: odf2xhtml "./odt/Fisiopatologia Generale e Patologia Clinica/AP.odt" > html/Fisiopato-AP.html
+            - run: odf2xhtml "./odt/Microbiologia/LR.odt" > html/Microbio-LR.html
+            - run: odf2xhtml "./odt/Microbiologia/AL.odt" > html/Microbio-AL.html
+            - run: odf2xhtml "./odt/Microbiologia/MP.odt" > html/Microbio-MP.html
+            - run: odf2xhtml "./odt/Semeiotica e Metodologia Clinica/FF.odt" > html/Semeiotica-FF.html
+            - run: odf2xhtml "./odt/Semeiotica e Metodologia Clinica/GDC.odt" > html/Semeiotica-GDC.html
+            - run: odf2xhtml "./odt/Semeiotica e Metodologia Clinica/SC.odt" > html/Semeiotica-SC.html
+            - run: python scripts/convert.py
+            - uses: stefanzweifel/git-auto-commit-action@v5
+
