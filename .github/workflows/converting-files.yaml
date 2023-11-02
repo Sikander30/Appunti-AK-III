@@ -11,7 +11,7 @@ jobs:
                 python-version: '3.9'
                 cache: 'pip'
             - run: pip install -r requirements.txt
-            - run: apt-get install wkhtmltopdf
+            - run: sudo apt-get install wkhtmltopdf
             - run: mkdir -p html
             - run: mkdir -p pdf
             - run: odf2xhtml "./odt/Fisiologia Umana II/MCM.odt" > html/Fisio2-MCM.html
