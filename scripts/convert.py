@@ -18,4 +18,4 @@ for file, subject in file_list:
     path = os.path.abspath(file)
     with open(path, 'r') as file:
         code = file.read()
-        pdfkit.from_string(path, f'pdf/{subject}-{str(file).split("/")[-1].split(".")[0]}.pdf')
+        pdfkit.from_string(code, f'pdf/{subject}-{str(file).split("/")[-1].split(".")[0]}.pdf')
