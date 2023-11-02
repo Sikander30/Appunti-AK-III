@@ -15,6 +15,7 @@ file_list = [('./html/Fisiologia Umana II/MCM.html', 'Fisio2'),
              ('./html/Semeiotica e Metodologia Clinica/SC.html', 'Semeiotica')]
 
 for file, subject in file_list:
-    with open(file, 'r') as file:
+    path = os.path.abspath(file)
+    with open(path, 'r') as file:
         code = file.read()
-        pdfkit.from_string(code, f'pdf/{subject}-{file.split("/")[-1].split(".")[0]}.pdf')
+        pdfkit.from_string(path, f'pdf/{subject}-{file.split("/")[-1].split(".")[0]}.pdf')
