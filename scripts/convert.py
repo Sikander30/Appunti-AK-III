@@ -1,5 +1,5 @@
 import os
-from pyhtml2pdf import converter
+import pdfkit
 
 
 file_list = [('./html/Fisiologia Umana II/MCM.html', 'Fisio2'),
@@ -15,7 +15,6 @@ file_list = [('./html/Fisiologia Umana II/MCM.html', 'Fisio2'),
              ('./html/Semeiotica e Metodologia Clinica/SC.html', 'Semeiotica')]
 
 for file, subject in file_list:
-    path = path = os.path.abspath(file)
-    # print(f'File to convert: {path}')
-    converter.convert(f'file:///{path}', f'pdf/{subject}-{file.split("/")[-1].split(".")[0]}.pdf')
-
+    with open(file, 'r') as file:
+        code = file.read()
+        pdfkit.from_string(code, f'pdf/{subject}-{file.split("/")[-1].split(".")[0]}.pdf')
