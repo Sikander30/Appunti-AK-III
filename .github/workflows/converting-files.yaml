@@ -19,6 +19,7 @@ jobs:
             - run: odf2xhtml "./odt/Fisiologia Umana II/LC.odt" > html/Fisio2-LC.html
             - run: odf2xhtml "./odt/Fisiopatologia Generale e Patologia Clinica/AC.odt" > html/Fisiopato-AC.html
             - run: odf2xhtml "./odt/Fisiopatologia Generale e Patologia Clinica/AP.odt" > html/Fisiopato-AP.html
+            - run: odf2xhtml "./odt/Fisiopatologia Generale e Patologia Clinica/LC.odt" > html/Fisiopato-LC.html
             - run: odf2xhtml "./odt/Microbiologia/LR.odt" > html/Microbio-LR.html
             - run: odf2xhtml "./odt/Microbiologia/AL.odt" > html/Microbio-AL.html
             - run: odf2xhtml "./odt/Microbiologia/MP.odt" > html/Microbio-MP.html
